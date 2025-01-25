@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/calculator.css">
+    <script>
+        function sendCalculation(operation) {
+            const num1 = document.getElementById('num1').value;
+            const num2 = document.getElementById('num2').value;
+
+            fetch('/calculate/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: `num1=${num1}&num2=${num2}&operation=${operation}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').value = data.result || data.error;
+            });
+        }
+    </script>
+</head>
+<body>
+    {% include 'header.html' %}
+    <h1>Simple Calculator</h1>
+    <div>
+        <input type="text" id="num1" placeholder="Enter first number">
+        <input type="text" id="num2" placeholder="Enter second number">
+        <div>
+            <button onclick="sendCalculation('add')">Add</button>
+            <button onclick="sendCalculation('subtract')">Subtract</button>
+            <button onclick="sendCalculation('multiply')">Multiply</button>
+            <button onclick="sendCalculation('divide')">Divide</button>
+        </div>
+        <input type="text" id="result" placeholder="Result" readonly>
+    </div>
+
+    {% include 'blog.html' %}
+    {% include 'footer.html' %}
+</body>
+</html>

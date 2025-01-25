@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Calculator Project</title>
+  <link href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    /* Header Styles */
+    .header {
+      background: #0078d7;
+      color: #fff;
+      padding: 1.5em 0;
+      text-align: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    /* Main Content Styles */
+    .about-container {
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 0 1em;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-content, .mission-content, .team-content {
+      padding: 1.5em;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .about-content:last-of-type, .mission-content:last-of-type {
+      border-bottom: none;
+    }
+
+    h2 {
+      color: #0078d7;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      margin: 0.5em 0 1em;
+      font-size: 1em;
+      line-height: 1.8;
+    }
+
+    /* Footer Styles */
+    .footer {
+      text-align: center;
+      background: #0078d7;
+      color: #fff;
+      padding: 1em 0;
+      margin-top: 2em;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+    {% include 'header.html' %}
+  <header class="header">
+    <h1>About Us</h1>
+  </header>
+  <main class="about-container">
+    <section class="about-content">
+      <h2>Who We Are</h2>
+      <p>Welcome to our Calculator Project! We are a team of passionate developers dedicated to creating simple, efficient, and user-friendly tools to make your daily calculations easier.</p>
+    </section>
+    <section class="mission-content">
+      <h2>Our Mission</h2>
+      <p>Our mission is to provide a seamless and reliable calculation experience for everyone, whether you're solving basic arithmetic or tackling complex equations.</p>
+    </section>
+    <section class="team-content">
+      <h2>Meet the Team</h2>
+      <p>We are a group of developers, designers, and problem-solvers who believe in innovation and simplicity. Your feedback drives our improvement.</p>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2025 Calculator Project. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
